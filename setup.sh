@@ -4,9 +4,7 @@
 # Copyright: (c) Copyright 2015 Masayuki Umeda
 # Licence:   Please feel free to use this, with attribution
 #===============================================================================
-seset -eu
-
-#: ${IPHONE_SDKVERSION:=8.3}
+set -eu
 
 #===============================================================================
 
@@ -21,13 +19,6 @@ seset -eu
 : ${SRCDIR:=`pwd`}
 : ${OS_BUILDDIR=`pwd`/iPhoneOS_build}
 : ${SIMULATOR_BUILDDIR=`pwd`/iPhoneSimulator_build}
-
-#===============================================================================
-
-#: ${XCODE_ROOT:=`xcode-select -print-path`}
-#: ${CMAKE_IOS_DEVELOPER_ROOT:=$XCODE_ROOT/Platforms/iPhoneOS.platform/Developer}
-#: ${CMAKE_IOSSIM_DEVELOPER_ROOT:=$XCODE_ROOT/Platforms/iPhoneSimulator.platform/Developer}
-
 
 #===============================================================================
 # Functions
@@ -56,12 +47,7 @@ downloadCmakeiOS()
 {
     echo "== downloading ios-cmake"
 
-    if [ ! -d ios-cmake ]
-        then
-        hg clone https://code.google.com/p/ios-cmake/
-        #curl https://ios-cmake.googlecode.com/files/ios-cmake.tar.gz -o ./ios-cmake.tar.gz
-        #tar xvzf ios-cmake.tar.gz
-    fi
+    [ -d ios-cmake ] || hg clone https://code.google.com/p/ios-cmake/
 
     doneSection
 }

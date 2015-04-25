@@ -1,10 +1,10 @@
 
 *.log
-./CMakeLists.txt
+/CMakeLists.txt
 
-./apr-*
-./apache-log4cxx-*
-./iPhoneOS_build
-./iPhoneSimulator_build
-./ios-cmake
-./log4cxx.framework
+/apr-*
+/apache-log4cxx-*
+/iPhoneOS_build
+/iPhoneSimulator_build
+/ios-cmake
+/log4cxx.framework
